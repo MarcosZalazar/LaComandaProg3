@@ -39,37 +39,37 @@ $app->addBodyParsingMiddleware();
 // Routes
 
 $app->group('/usuarios', function (RouteCollectorProxy $group) {
-  $group->get('[/]', \UsuarioController::class . ':TraerTodos');
+  $group->post('/alta', \UsuarioController::class . ':CargarUno');
+  $group->post('/login', \AutentificadorController::class . ':CrearTokenLogin');
+  $group->get('/traerUsuarios', \UsuarioController::class . ':TraerTodos');
   //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-  $group->post('[/]', \UsuarioController::class . ':CargarUno');
-  //$group->put('/{id}', \UsuarioController::class . ':ModificarUno');
-  //$group->delete('/{id}', \UsuarioController::class . ':BorrarUno');
-});
-
-$app->group('/mesas', function (RouteCollectorProxy $group) {
-  $group->get('[/]', \UsuarioController::class . ':TraerTodos');
-  //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-  $group->post('[/]', \UsuarioController::class . ':CargarUno');
-  //$group->put('/{id}', \UsuarioController::class . ':ModificarUno');
-  //$group->delete('/{id}', \UsuarioController::class . ':BorrarUno');
-});
-
-$app->group('/pedidos', function (RouteCollectorProxy $group) {
-  $group->get('[/]', \UsuarioController::class . ':TraerTodos');
-  //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-  $group->post('[/]', \UsuarioController::class . ':CargarUno');
   //$group->put('/{id}', \UsuarioController::class . ':ModificarUno');
   //$group->delete('/{id}', \UsuarioController::class . ':BorrarUno');
 });
 
 $app->group('/productos', function (RouteCollectorProxy $group) {
-  $group->get('[/]', \UsuarioController::class . ':TraerTodos');
+  $group->post('/altaProducto', \ProductoController::class . ':CargarUno')->add(new CheckPerfilMiddleware());
+  $group->get('/traerProductos', \ProductoController::class . ':TraerTodos');
   //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-  $group->post('[/]', \UsuarioController::class . ':CargarUno');
   //$group->put('/{id}', \UsuarioController::class . ':ModificarUno');
   //$group->delete('/{id}', \UsuarioController::class . ':BorrarUno');
 });
 
+$app->group('/mesas', function (RouteCollectorProxy $group) {
+  $group->post('/altaMesa', \MesaController::class . ':CargarUno')->add(new CheckPerfilMiddleware());
+  $group->get('/traerMesas', \MesaController::class . ':TraerTodos');
+  //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+  //$group->put('/{id}', \UsuarioController::class . ':ModificarUno');
+  //$group->delete('/{id}', \UsuarioController::class . ':BorrarUno');
+});
+
+$app->group('/pedidos', function (RouteCollectorProxy $group) {
+  $group->post('/altaPedido', \PedidoController::class . ':CargarUno')->add(new CheckPerfilMiddleware());
+  $group->get('/traerPedidos', \PedidoController::class . ':TraerTodos');
+  //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+  //$group->put('/{id}', \UsuarioController::class . ':ModificarUno');
+  //$group->delete('/{id}', \UsuarioController::class . ':BorrarUno');
+});
 
 $app->get('[/]', function (Request $request, Response $response) {    
     $response->getBody()->write("Parcial Programacion III - CRIPTOMONEDAS");
