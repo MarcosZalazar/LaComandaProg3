@@ -1,0 +1,893 @@
+{
+	"info": {
+		"_postman_id": "dc3e4bae-c5ef-48b7-b8b6-fe7a2504593b",
+		"name": "LaComanda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 - Carga socio Marcos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Marcos",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "socio",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-1-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Carga socio Pablo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Pablo",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "def",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "socio",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-1-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Carga socio Juan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "ghi",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-1-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Carga bartender Lucas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lucas",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "jkl",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "bartender",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-2-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Carga cervecero Leandro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Leandro",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "mno",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "cervecero",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-3-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Carga cocinero Lucia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lucia",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "pqr",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "cocinero",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-4-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Carga mozo Cristian",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Cristian",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "stu",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "mozo",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-5-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Carga mozo Marcio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Marcio",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "vwx",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "mozo",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2022-5-2",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Conseguir token Marcos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Marcos",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "socio",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Consegior token Pablo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Pablo",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "def",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "socio",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Consegior token Juan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "ghi",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Consegior token Lucas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lucas",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "jkl",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "bartender",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Consegior token Lucia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Lucia",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "pqr",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "cocinero",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Consegior token Cristian",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Cristian",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "stu",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "mozo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Consegior token Marcio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Marcio",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "vwx",
+							"type": "text"
+						},
+						{
+							"key": "perfil_usuario",
+							"value": "mozo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - Traer usuarios",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:666/usuarios/traerUsuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						"traerUsuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 - Alta producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjgzNjU0MjUsImV4cCI6MTY2ODQyNTQyNSwiYXVkIjoiNTRhNTY0MjFlNWFhY2IzYTE1MWQ3M2MzNzE0MDg1YmQ1NWRiNDhjYSIsImRhdGEiOnsidXN1YXJpbyI6Im1hcmNvc0BnbWFpbC5jb20iLCJjbGF2ZSI6IiQyeSQxMCRDTm5ubnRwWXNhZ0FaRkdzZjFrZGUuVnB6XC9FdElhOFFJSXROajd6NURBN3Q1ejVPQ3liU3kiLCJwZXJmaWxfdXN1YXJpbyI6ImFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.eFKgaNs_8IsHooshp66jYlKrIrjBE6hkb6Zb40dKCNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Hamburguesa",
+							"type": "text"
+						},
+						{
+							"key": "costo",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "en preparacion",
+							"type": "text"
+						},
+						{
+							"key": "horarioInicio",
+							"value": "18:20",
+							"type": "text"
+						},
+						{
+							"key": "horarioTerminado",
+							"value": "18:40",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/productos/altaProducto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"productos",
+						"altaProducto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 - Traer producto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:666/traerProductos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"traerProductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 - Alta mesa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjgzNjU0MjUsImV4cCI6MTY2ODQyNTQyNSwiYXVkIjoiNTRhNTY0MjFlNWFhY2IzYTE1MWQ3M2MzNzE0MDg1YmQ1NWRiNDhjYSIsImRhdGEiOnsidXN1YXJpbyI6Im1hcmNvc0BnbWFpbC5jb20iLCJjbGF2ZSI6IiQyeSQxMCRDTm5ubnRwWXNhZ0FaRkdzZjFrZGUuVnB6XC9FdElhOFFJSXROajd6NURBN3Q1ejVPQ3liU3kiLCJwZXJmaWxfdXN1YXJpbyI6ImFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.eFKgaNs_8IsHooshp66jYlKrIrjBE6hkb6Zb40dKCNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "estado",
+							"value": "abierta",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/criptomonedas/altaMesa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"criptomonedas",
+						"altaMesa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 - Traer mesas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:666/traerMesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"traerMesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 - Alta pedido",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjgzNjU0MjUsImV4cCI6MTY2ODQyNTQyNSwiYXVkIjoiNTRhNTY0MjFlNWFhY2IzYTE1MWQ3M2MzNzE0MDg1YmQ1NWRiNDhjYSIsImRhdGEiOnsidXN1YXJpbyI6Im1hcmNvc0BnbWFpbC5jb20iLCJjbGF2ZSI6IiQyeSQxMCRDTm5ubnRwWXNhZ0FaRkdzZjFrZGUuVnB6XC9FdElhOFFJSXROajd6NURBN3Q1ejVPQ3liU3kiLCJwZXJmaWxfdXN1YXJpbyI6ImFkbWluIn0sImFwcCI6IlRlc3QgSldUIn0.eFKgaNs_8IsHooshp66jYlKrIrjBE6hkb6Zb40dKCNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idMesa",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "abierta",
+							"type": "text"
+						},
+						{
+							"key": "nombreCliente",
+							"value": "Juancito",
+							"type": "text"
+						},
+						{
+							"key": "fotoMesa",
+							"type": "file",
+							"src": "/C:/Users/Marcos/Desktop/FotosParcial/ventaUno.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/criptomonedas/altaPedido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"criptomonedas",
+						"altaPedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 - Traer pedido",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:666/traerPedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"traerPedidos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
