@@ -96,11 +96,11 @@ class Pedido
         return $consulta->fetchObject('Pedido');
     }
 
-    public static function obtenerPedidoPorIdMesaYEstado($idMesa)
+    public static function obtenerPedidoPorIdMesaYEntregado($idMesa)
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM pedidos
-        WHERE idMesa = :idMesa AND estado = 'listo para servir'");
+        WHERE idMesa = :idMesa AND totalFacturado is NULL");
         $consulta->bindValue(':idMesa', $idMesa, PDO::PARAM_INT);
         $consulta->execute();
 
@@ -126,7 +126,16 @@ class Pedido
 
         return $consulta->fetchObject('Pedido');
     }
-    
+    public static function obtenerPedidoPorIdMesaYEstado($idMesa)
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM pedidos
+        WHERE idMesa = :idMesa AND estado = 'listo para servir'");
+        $consulta->bindValue(':idMesa', $idMesa, PDO::PARAM_INT);
+        $consulta->execute();
+
+        return $consulta->fetchObject('Pedido');
+    }
 
     public static function InformarListosParaServirTodos()
     {

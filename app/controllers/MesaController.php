@@ -174,7 +174,7 @@ class MesaController extends Mesa implements IApiUsable
   {
     $id = $args["id"];
     $mesa = Mesa::obtenerMesaPorId($id);  
-    $pedido = Pedido::obtenerPedidoPorIdMesaYEstado($id);
+    $pedido = Pedido::obtenerPedidoPorIdMesaYEntregado($id);
 
     if($mesa && $pedido) 
     {
