@@ -4,7 +4,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Slim\Psr7\Response;
 
-class CheckPerfilMiddleware{
+class CheckSocioMiddleware{
     public function __invoke(Request $request,RequestHandler $handler) : Response
     {
        $header = $request->getHeaderLine(("Authorization"));
@@ -13,15 +13,15 @@ class CheckPerfilMiddleware{
        try 
        {
         $data = AutentificadorJWT::ObtenerData($token);
-        if($data->perfil_usuario=="admin")
+        if($data->perfil=="socio")
         {
-          echo "El usuario es admin";
+          echo "El usuario es socio";
           $response= $handler->handle($request);
           $response = $response->withStatus(200);
         }
         else
         {
-          $response->getBody()->write(json_encode(array('Error!!' => "El usuario no es admin")));
+          $response->getBody()->write(json_encode(array('Error!!' => "Esta operación solo es válida para el perfil socio")));
           $response = $response->withStatus(403);
         }     
       } 

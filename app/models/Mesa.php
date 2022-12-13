@@ -3,15 +3,19 @@
 class Mesa
 {
     public $id;
+    public $codigoMesa;
     public $estado;
+    public $disponible;
 
 
     public function crearMesa()
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO mesas (estado) 
-        VALUES (:estado)");
+        $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO mesas (codigoMesa, estado, disponible)
+        VALUES (:codigoMesa, :estado, :disponible)");
+        $consulta->bindValue(':codigoMesa', $this->codigoMesa, PDO::PARAM_STR);
         $consulta->bindValue(':estado', $this->estado, PDO::PARAM_STR);
+        $consulta->bindValue(':disponible', true, PDO::PARAM_BOOL);
         $consulta->execute();
 
         return $objAccesoDatos->obtenerUltimoId();
@@ -20,64 +24,77 @@ class Mesa
     public static function obtenerTodos()
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM mesas");
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM mesas WHERE disponible = true");
         $consulta->execute();
 
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'Mesa');
     }
-    /*
-    public static function obtenerUsuario($id)
+
+    public static function modificarMesa($mesa)
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("UPDATE mesas SET 
+        codigoMesa = :codigoMesa, estado = :estado, disponible = :disponible WHERE id = :id 
+        AND disponible = true");
+        $consulta->bindValue(':id', $mesa->id, PDO::PARAM_INT);
+        $consulta->bindValue(':codigoMesa', $mesa->codigoMesa, PDO::PARAM_STR);
+        $consulta->bindValue(':estado', $mesa->estado, PDO::PARAM_STR);
+        $consulta->bindValue(':disponible', $mesa->disponible, PDO::PARAM_BOOL);
+
+        return $consulta->execute();
+    }
+
+    public static function borrarMesa($id)
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("UPDATE mesas SET 
+        disponible = false WHERE id = :id AND disponible = true");
+        $consulta->bindValue(':id', $id, PDO::PARAM_INT);
+
+        return $consulta->execute();
+    }
+
+    public static function actualizarEstadoMesa($estado, $id)
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("UPDATE mesas SET 
+        estado = :estado WHERE id = :id AND disponible = true");
+        $consulta->bindValue(':id', $id, PDO::PARAM_INT);
+        $consulta->bindValue(':estado', $estado, PDO::PARAM_STR);
+
+        $consulta->execute();
+    }
+
+    public static function InformarEstadosDeMesas()
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("SELECT id, estado FROM mesas 
+        WHERE disponible = true");              
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Mesa');
+    }
+
+    public static function obtenerMesaPorId($id)
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM usuarios WHERE id = :id");
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM mesas 
+        WHERE id = :id");
         $consulta->bindValue(':id', $id, PDO::PARAM_INT);
         $consulta->execute();
 
-        return $consulta->fetchObject('Usuario');
+        return $consulta->fetchObject('Mesa');
     }
 
-    public static function modificarUsuario($usuario)
+    public static function obtenerMesaPorCodigo($codigoMesa)
     {
-        $objAccesoDato = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDato->prepararConsulta("UPDATE usuarios SET 
-        clave = :clave, nombre=:nombre, perfil_usuario= :perfilUsuario, fechaAlta=:fechaAlta WHERE id = :id");
-        $claveHash = password_hash($usuario->clave, PASSWORD_DEFAULT);
-        $consulta->bindValue(':nombre', $usuario->mail, PDO::PARAM_STR);
-        $consulta->bindValue(':clave', $claveHash, PDO::PARAM_STR);
-
-        if($usuario->perfil_usuario!=null)
-        {
-            $consulta->bindValue(':perfilUsuario', $usuario->perfil_usuario, PDO::PARAM_STR);
-        }else{
-            $consulta->bindValue(':perfilUsuario', null, PDO::PARAM_STR);
-        }
-
-        if($usuario->fechaAlta != null)
-        {
-            $consulta->bindValue(':fechaAlta', $usuario->fechaAlta, PDO::PARAM_STR);
-        }else{
-            $consulta->bindValue(':fechaAlta', null, PDO::PARAM_STR);
-        }
-
-        if($usuario->fechaBaja != null)
-        {
-            $consulta->bindValue(':fechaBaja', $usuario->fechaBaja, PDO::PARAM_STR);
-        }else{
-            $consulta->bindValue(':fechaBaja', null, PDO::PARAM_STR);
-        }
-
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM mesas 
+        WHERE codigoMesa = :codigoMesa");
+        $consulta->bindValue(':codigoMesa', $codigoMesa, PDO::PARAM_STR);
         $consulta->execute();
-    }
 
-    public static function borrarUsuario($id)
-    {
-        $objAccesoDato = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDato->prepararConsulta("UPDATE usuarios SET fechaBaja = :fechaBaja WHERE id = :id");
-        $fecha = date("Y-m-d H:i:s");
-        $consulta->bindValue(':id', $id, PDO::PARAM_INT);
-        $consulta->bindValue(':fechaBaja', $fecha);
-        $consulta->execute();
+        return $consulta->fetchObject('Mesa');
     }
-    */
 }
 ?>
